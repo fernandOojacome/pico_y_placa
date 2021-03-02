@@ -65,7 +65,7 @@ int main (void){
 
 	printf("\nOn a %s, at %02d:%02d, a car with plate number ending in %d is:\n\n", day, time_h, time_m, plateDigit);
 
-	//Check if the time input is within restriction hours (7:00 - 9:30 and 16:00 - 19:30)
+	//Check if input time is within restriction hours (7:00 - 9:30 and 16:00 - 19:30)
 
 	if ((time >= 700 && time <= 950) || (time >= 1600 && time <= 1950)){
 
@@ -79,7 +79,7 @@ int main (void){
 
 	}
 	
-	return 0;	//program ends
+	return 0;	//Program ends
 }
 
 int checkPlate(int plateNum){
@@ -95,7 +95,7 @@ int checkDate(char *d){
 
 	int dayNumber = 0;
 
-	if (d[0] == 's' || d[0] == 'S'){			//Saturday or Sunday
+	if (d[0] == 's' || d[0] == 'S'){		//Saturday or Sunday
 		dayNumber = 0;
 	} else if (d[0] == 'm' || d[0] == 'M'){		//Monday
 		dayNumber = 1;
@@ -107,7 +107,7 @@ int checkDate(char *d){
 		dayNumber = 4;
 	} else if (d[0] == 'f' || d[0] == 'F'){		//Friday
 		dayNumber = 5;
-	} else {									//Anything else is invalid
+	} else {					//Anything else is invalid
 		return 10;
 	}
 
@@ -135,7 +135,7 @@ void checkRestriction(int dayNum, int plateNum){
 
 	switch (dayNum){
 
-			case 0: allowedOut();								//No restriction on weekends
+			case 0: allowedOut();					//No restriction on weekends
 					break;
 
 			case 1: if (plateNum == 1 || plateNum == 2){		//Restriction to 1 and 2 on Monday
